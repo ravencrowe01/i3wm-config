@@ -289,13 +289,13 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Print exec --no-startup-id scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 
-# Open the home directory in VSCode
-bindsym $mod+c exec --no-startup-id code ~/
+# Open the Documents directory in VSCode
+bindsym $mod+c exec --no-startup-id code ~/Documents/
 
 # Open the config i3 directory in VSCode
 bindsym $mod+Shift+g exec --no-startup-id code ~/.config/i3/
@@ -339,9 +339,9 @@ assign [class="Xfce4-terminal"] $ws1
 assign [class="code"] $ws2
 assign [class="Thunar"] $ws5
 
-assign [class="Firefox"] $ws6
+assign [class="(?i)firefox"] $ws6
 assign [class="(?i)discord(?i)"] $ws9
-assign [class="Spotify"] $ws10
+assign [class="(?i)spotify(?i)"] $ws10
 
 ##############
 # compositor #
@@ -441,7 +441,7 @@ exec --no-startup-id /usr/bin/dunst
 exec --no-startup-id sleep 2 && xfce4-terminal
 exec --no-startup-id sleep 7 && firefox
 exec --no-startup-id sleep 3 && thunar
-exec --no-startup-id sleep 7 && spotify-launcer
+exec --no-startup-id sleep 7 && spotify-launcher
 exec --no-startup-id sleep 7 && discord
 
 # Turn off power saving features
